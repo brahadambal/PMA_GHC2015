@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mallya.manageeasy.AddInventoryActivity_4d"
+    android:id="@+id/RelativeLayout7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/InventoryName"
+        android:id="@+id/textView_Inventory"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/InventoryDescription"
+        android:id="@+id/textView_InventoryDescription"
+        android:layout_below="@+id/textView_Inventory"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/InvetoryRelatedInstance"
+        android:id="@+id/textView_RelatedInstance"
+        android:layout_below="@+id/textView_InventoryDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/InventoryCost"
+        android:id="@+id/textView_InventoryCost"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddNewInventoryButton"
+        android:id="@+id/button_AddNewInventory"
+        android:layout_below="@+id/textView_InventoryCost"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="71dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_InventoryName"
+        android:layout_alignTop="@+id/textView_Inventory"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="text"
+        android:layout_toRightOf="@+id/textView_RelatedInstance"
+        android:layout_toEndOf="@+id/textView_RelatedInstance" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_InventoryDescription"
+        android:layout_alignTop="@+id/textView_InventoryDescription"
+        android:layout_alignLeft="@+id/editText_InventoryName"
+        android:layout_alignStart="@+id/editText_InventoryName"
+        android:layout_alignRight="@+id/editText_InventoryName"
+        android:layout_alignEnd="@+id/editText_InventoryName"
+        android:inputType="textShortMessage" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_InventoryRelatedInstanceName"
+        android:layout_alignTop="@+id/textView_RelatedInstance"
+        android:layout_alignLeft="@+id/editText_InventoryDescription"
+        android:layout_alignStart="@+id/editText_InventoryDescription"
+        android:layout_alignRight="@+id/editText_InventoryDescription"
+        android:layout_alignEnd="@+id/editText_InventoryDescription"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_InventoryCost"
+        android:layout_alignBottom="@+id/textView_InventoryCost"
+        android:layout_alignLeft="@+id/editText_InventoryRelatedInstanceName"
+        android:layout_alignStart="@+id/editText_InventoryRelatedInstanceName"
+        android:layout_alignRight="@+id/editText_InventoryRelatedInstanceName"
+        android:layout_alignEnd="@+id/editText_InventoryRelatedInstanceName"
+        android:inputType="number" />
+</RelativeLayout>

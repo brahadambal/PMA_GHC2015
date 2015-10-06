@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mallya.manageeasy" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".LoginActivity_1"
+            android:label="@string/app_name" >
+            <action android:name="android.intent.action.MAIN" />
+
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserActivity_2"
+            android:label="@string/title_activity_user" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UserActivity_2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChartsActivity_3"
+            android:label="@string/title_activity_charts" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.ChartsActivity_3" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateProjectActivity_3"
+            android:label="@string/title_activity_update_project" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UpdateProjectActivity_3" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddNewProjectActivity_4a"
+            android:label="AddNewProjectActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.AddNewProjectActivity_4a" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateProjectDetailsActivity_4a"
+            android:label="UpdateProjectDetailsActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UpdateProjectDetailsActivity_4a" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeleteProjectActivity_4a"
+            android:label="DeleteProjectActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.DeleteProjectActivity_4a" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddInstanceActivity_4b"
+            android:label="AddInstanceActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.AddInstanceActivity_4b" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeleteInstanceActivity_4b"
+            android:label="DeleteInstanceActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.DeleteInstanceActivity_4b" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateInstanceActivity_4b"
+            android:label="UpdateInstanceActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UpdateInstanceActivity_4b" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddPersonnelActivity_4c"
+            android:label="AddPersonnelActivity" >
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.AddPersonnelActivity_4c" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdatePersonnelActivity_4c"
+            android:label="@string/title_activity_update_personnel" >
+
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UpdatePersonnelActivity_4c" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".DeletePersonnelActivity_4c"
+            android:label="@string/title_activity_delete_personnel_activity_4c" >
+
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.DeletePersonnelActivity_4c" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".AddInventoryActivity_4d"
+            android:label="@string/title_activity_add_inventory_activity_4d" >
+
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.AddInventoryActivity_4d" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".UpdateInventoryActivity_4d"
+            android:label="@string/title_activity_update_inventory_activity_4d" >
+
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.UpdateInventoryActivity_4d" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+
+        <activity
+            android:name=".DeleteInvetoryActivity_4d"
+            android:label="@string/title_activity_delete_invetory" >
+
+            <intent-filter>
+                <action android:name="com.example.mallya.manageeasy.DeleteInvetoryActivity_4d" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

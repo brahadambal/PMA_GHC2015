@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mallya.manageeasy.UserActivity_2"
+    android:id="@+id/RelativeLayout2"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin">
+    <!--android:background="@drawable/hands"
+    android:alpha=".50" -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/Welcome_text"
+        android:id="@+id/textView_welcome"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:textColor="#010101"
+        android:background="#8FFF" />
+
+    <ImageButton
+        android:layout_width="121dp"
+        android:layout_height="116dp"
+        android:id="@+id/imageButton_Project"
+        android:src="@drawable/projmanagement"
+        android:layout_gravity="left|center_vertical"
+        android:contentDescription="@string/Projects" />
+
+    <ImageButton
+        android:layout_width="126dp"
+        android:layout_height="105dp"
+        android:id="@+id/imageButton_chart"
+        android:src="@drawable/ic3"
+        android:layout_gravity="right|center_vertical"
+        android:contentDescription="@string/Charts" />
+
+</FrameLayout>

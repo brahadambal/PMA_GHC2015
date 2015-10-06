@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mallya.manageeasy.AddNewProjectActivity_4a"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:id="@+id/RelativeLayout4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ProjectName"
+        android:id="@+id/textView_InstanceProjectName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ProjectDescription"
+        android:id="@+id/textView_ProjectDescription"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/textView_InstanceProjectName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ProjectStartDate"
+        android:id="@+id/textView_StartDate"
+        android:layout_below="@+id/textView_ProjectDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ProjectEndDate"
+        android:id="@+id/textView_EndDate"
+        android:layout_below="@+id/textView_StartDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ProjectFunds"
+        android:id="@+id/textView_ProjectFunds"
+        android:layout_below="@+id/textView_EndDate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_ProjectName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toRightOf="@+id/textView_InstanceProjectName"
+        android:layout_toEndOf="@+id/textView_InstanceProjectName"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_ProjectDescription"
+        android:layout_alignTop="@+id/textView_ProjectDescription"
+        android:layout_alignLeft="@+id/editText_ProjectName"
+        android:layout_alignStart="@+id/editText_ProjectName"
+        android:layout_alignRight="@+id/editText_ProjectName"
+        android:layout_alignEnd="@+id/editText_ProjectName"
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_StartDate"
+        android:layout_alignTop="@+id/textView_StartDate"
+        android:layout_alignLeft="@+id/editText_ProjectDescription"
+        android:layout_alignStart="@+id/editText_ProjectDescription"
+        android:layout_alignRight="@+id/editText_ProjectDescription"
+        android:layout_alignEnd="@+id/editText_ProjectDescription"
+        android:inputType="date" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_EndDate"
+        android:layout_alignTop="@+id/textView_EndDate"
+        android:layout_toRightOf="@+id/textView_InstanceProjectName"
+        android:layout_alignRight="@+id/editText_StartDate"
+        android:layout_alignEnd="@+id/editText_StartDate"
+        android:inputType="date" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_ProjectFunds"
+        android:layout_alignBottom="@+id/textView_ProjectFunds"
+        android:layout_alignLeft="@+id/editText_EndDate"
+        android:layout_alignStart="@+id/editText_EndDate"
+        android:layout_alignRight="@+id/editText_EndDate"
+        android:layout_alignEnd="@+id/editText_EndDate"
+        android:inputType="number" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddNewProjectButton"
+        android:id="@+id/button_AddNewProject"
+        android:layout_below="@+id/editText_ProjectFunds"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp" />
+</RelativeLayout>
