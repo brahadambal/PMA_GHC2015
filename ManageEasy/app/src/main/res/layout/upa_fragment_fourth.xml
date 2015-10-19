@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/PersonnelUpdates"
+        android:id="@+id/textView_PersonnelUpdates"
+        android:background="#1fffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddPersonnel"
+        android:id="@+id/button_AddPersonnel"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/UpdatePersonnel"
+        android:id="@+id/button_UpdatePersonnel"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DeletePersonnel"
+        android:id="@+id/button_DeletePersonnel"/>
+
+</LinearLayout>

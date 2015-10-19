@@ -1,185 +1,26 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_3"
-    android:id="@+id/RelativeLayout3"
-    android:paddingEnd="@dimen/activity_horizontal_margin"
-    android:paddingStart="@dimen/activity_horizontal_margin">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        app:pstsShouldExpand="true"
+        app:pstsTextAllCaps="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="#000000"
+        app:pstsDividerColor="@color/green"
+        app:pstsIndicatorColor="@color/red"
+        app:pstsUnderlineColor="@color/blue"
+        app:pstsTabPaddingLeftRight="14dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AddNewProject"
-        android:id="@+id/Button_AddProject"
-        android:layout_below="@+id/textView_ProjectUpdates" />
+        android:background="@android:color/white" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/ProjectUpdateBanner"
-        android:id="@+id/textView_ProjectUpdates"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/button_DeleteProject"
-        android:layout_alignEnd="@+id/button_DeleteProject"
-        android:background="#1fffff" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/UpdateProject"
-        android:id="@+id/button_UpdateProject"
-        android:layout_below="@+id/Button_AddProject"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/Button_AddProject"
-        android:layout_alignEnd="@+id/Button_AddProject" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/DeleteProject"
-        android:id="@+id/button_DeleteProject"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button_UpdateProject"
-        android:layout_alignRight="@+id/button_UpdateProject"
-        android:layout_alignEnd="@+id/button_UpdateProject" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/InstanceUpdateBanner"
-        android:id="@+id/textView_InstanceUpdates"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/button_AddInstance"
-        android:background="#1fffff" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/AddNewInstance"
-        android:id="@+id/button_AddInstance"
-        android:layout_alignBottom="@+id/Button_AddProject"
-        android:layout_alignLeft="@+id/textView_InstanceUpdates"
-        android:layout_alignStart="@+id/textView_InstanceUpdates" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/UpdateInstance"
-        android:id="@+id/button_UpdateInstance"
-        android:layout_above="@+id/button_DeleteProject"
-        android:layout_alignRight="@+id/button_AddInstance"
-        android:layout_alignEnd="@+id/button_AddInstance"
-        android:layout_alignLeft="@+id/button_AddInstance"
-        android:layout_alignStart="@+id/button_AddInstance" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/DeleteInstance"
-        android:id="@+id/button_DeleteInstance"
-        android:layout_alignTop="@+id/button_DeleteProject"
-        android:layout_alignRight="@+id/button_UpdateInstance"
-        android:layout_alignEnd="@+id/button_UpdateInstance"
-        android:layout_alignLeft="@+id/button_AddInstance"
-        android:layout_alignStart="@+id/button_AddInstance" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/PersonnelUpdates"
-        android:id="@+id/textView_PersonnelUpdates"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/button_AddInventory"
-        android:background="#1fffff"
-        android:layout_toLeftOf="@+id/button_AddInventory" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/AddPersonnel"
-        android:id="@+id/button_AddPersonnel"
-        android:layout_below="@+id/textView_PersonnelUpdates"
-        android:layout_toLeftOf="@+id/button_AddInstance"
-        android:layout_toStartOf="@+id/button_AddInstance" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/UpdatePersonnel"
-        android:id="@+id/button_UpdatePersonnel"
-        android:layout_below="@+id/button_AddPersonnel"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/button_UpdateInstance"
-        android:layout_alignRight="@+id/button_AddPersonnel"
-        android:layout_alignEnd="@+id/button_AddPersonnel" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/DeletePersonnel"
-        android:id="@+id/button_DeletePersonnel"
-        android:layout_below="@+id/button_UpdatePersonnel"
-        android:layout_alignRight="@+id/button_UpdatePersonnel"
-        android:layout_alignEnd="@+id/button_UpdatePersonnel" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/InventoryUpdatesBanner"
-        android:id="@+id/textView_InventoryUpdates"
-        android:layout_above="@+id/button_AddPersonnel"
-        android:background="#1fffff"
-        android:layout_alignLeft="@+id/button_DeleteInstance"
-        android:layout_alignStart="@+id/button_DeleteInstance" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/AddInventory"
-        android:id="@+id/button_AddInventory"
-        android:layout_below="@+id/textView_InventoryUpdates"
-        android:layout_alignRight="@+id/textView_InventoryUpdates"
-        android:layout_alignEnd="@+id/textView_InventoryUpdates" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/UpdateInventory"
-        android:id="@+id/button_UpdateInventory"
-        android:layout_alignTop="@+id/button_UpdatePersonnel"
-        android:layout_alignRight="@+id/button_AddInventory"
-        android:layout_alignEnd="@+id/button_AddInventory"
-        android:layout_alignLeft="@+id/textView_InventoryUpdates"
-        android:layout_alignStart="@+id/textView_InventoryUpdates"
-        android:layout_above="@+id/button_DeleteInventory" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/DeleteInventory"
-        android:id="@+id/button_DeleteInventory"
-        android:layout_alignTop="@+id/button_DeletePersonnel"
-        android:layout_alignLeft="@+id/button_UpdateInventory"
-        android:layout_alignStart="@+id/button_UpdateInventory"
-        android:layout_alignBottom="@+id/button_DeletePersonnel"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-</RelativeLayout>
+</LinearLayout>

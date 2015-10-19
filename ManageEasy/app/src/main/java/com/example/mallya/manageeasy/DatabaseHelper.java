@@ -39,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE3_COL4="Contact";
     public static final String TABLE3_COL5="Address";
     public static final String TABLE3_COL6="Salary";
-    public static final String TABLE3_COL7="JoinDate";
+    public static final String TABLE3_COL7="JoiningDate";
     public static final String TABLE3_COL8="ResignDate";
 
     // INVENTORY SPECIFIC TABLE ENTRIES
@@ -72,17 +72,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table  " + TABLE_1 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, ProjectName TEXT, Description TEXT, " +
                 "StartDate INTEGER, EndDate INTEGER, Funds INTEGER )");
 
-        db.execSQL("create table  " + TABLE_2 + "ID INTEGER PRIMARY KEY AUTOINCREMENT, Instance Name TEXT, Project Name TEXT" +
-                 "Description TEXT, Fund INTEGER, Location TEXT");
+        db.execSQL("create table  " + TABLE_2 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, Instance Name TEXT, Project Name TEXT," +
+                 "Description TEXT, Fund INTEGER, Location TEXT )");
 
-        db.execSQL("create table  " + TABLE_3 + "ID INTEGER PRIMARY KEY AUTOINCREMENT, Personnel Name TEXT, Instance Name TEXT" +
-                 "Contact TEXT, Address TEXT, Salary INTEGER, Join Date TEXT, Resign Date TEXT");
+        db.execSQL("create table  " + TABLE_3 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, Personnel Name TEXT, Instance Name TEXT," +
+                 "Contact TEXT, Address TEXT, Salary INTEGER, Joining Date TEXT, Resign Date TEXT )");
 
-        db.execSQL("create table  " + TABLE_4 + "ID INTEGER PRIMARY KEY AUTOINCREMENT, Inventory Name TEXT, Description TEXT" +
-                        "Instance Name TEXT , Inventory Cost INTEGER");
+        db.execSQL("create table  " + TABLE_4 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, Inventory Name TEXT, Description TEXT," +
+                        "Instance Name TEXT , InventoryCost INTEGER )");
 
-        db.execSQL("create table  " + TABLE_5 + "ID INTEGER PRIMARY KEY AUTOINCREMENT, Donated By TEXT, FUNDS INTEGER, Project Name TEXT" +
-                "Instance Name INTEGER");
+        db.execSQL("create table  " + TABLE_5 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, Donated By TEXT, FUNDS INTEGER, Project Name TEXT," +
+                "Instance Name INTEGER )");
 
     }
 
@@ -179,10 +179,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TABLE5_COL1,DonatedBy);
-        contentValues.put(TABLE5_COL2,Funds);
-        contentValues.put(TABLE5_COL3,InstanceName);    // TODO Drop down from existing Instances only
-        contentValues.put(TABLE5_COL3,ProjectName);     // TODO Drop down from existing Projects only
+        contentValues.put(TABLE5_COL2,DonatedBy);
+        contentValues.put(TABLE5_COL3,Funds);
+        contentValues.put(TABLE5_COL4,InstanceName);    // TODO Drop down from existing Instances only
+        contentValues.put(TABLE5_COL5,ProjectName);     // TODO Drop down from existing Projects only
 
         long result = db.insert(TABLE_5,null,contentValues);
 

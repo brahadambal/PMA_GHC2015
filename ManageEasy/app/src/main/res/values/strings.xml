@@ -71,5 +71,8 @@
     <string name="PersonnelJoinDate">Join Date</string>
     <string name="PersonnelResignDate">Resign Date</string>
     <string name="AddNewPersonnel">Add New Personnel</string>
-
+    <string name="title_activity_Update_Project_details_frag1">Project Page</string>
+    <string name="title_activity_Update_Project_details_frag2">Instance Page</string>
+    <string name="title_activity_Update_Project_details_frag3">Inventory Page</string>
+    <string name="title_activity_Update_Project_details_frag4">Project Page</string>
 </resources>
