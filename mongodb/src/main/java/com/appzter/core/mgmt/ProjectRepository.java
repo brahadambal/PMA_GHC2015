@@ -1,5 +1,6 @@
 package com.appzter.core.mgmt;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -25,11 +26,20 @@ public class ProjectRepository {
 		logger.info("Fundresults: {}", Fundresults);
 	}
 
-	public void insertProject(String projectName, String projectID, Double fund) { // get random age
-															// between 1 and 100
-		Fund f = new Fund(new Double(fund));
-		Project p = new Project(projectName, f);
-		mongoTemplate.insert(f);
+	public void insertProject(String projectName, String projectID, Double fund) {
+		double random = Math.ceil(Math.random() * 100);
+		String parentID = "P"+random;
+				
+		Instance I1 = new Instance("I1",  projectName, "Bengaluru", parentID, 10000.00);
+		Instance I2 = new Instance("I2",  projectName, "Mysuru", parentID, 5000.00);
+		
+		List<Instance> InstanceList= new ArrayList<Instance>();
+		InstanceList.add(I1);
+		InstanceList.add(I2);
+		
+		Project p = new Project("P1", InstanceList, "GirlChildToSchool", 25000.00, "P"+random);
+		mongoTemplate.insert(I1);
+		mongoTemplate.insert(I2);
 		mongoTemplate.insert(p);
 	}
 

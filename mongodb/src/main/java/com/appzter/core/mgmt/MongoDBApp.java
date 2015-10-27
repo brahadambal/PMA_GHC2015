@@ -5,7 +5,6 @@ import java.net.UnknownHostException;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -17,6 +16,7 @@ public class MongoDBApp {
 	public static void main(String[] args) throws UnknownHostException {
 		BasicConfigurator.configure();
 		logger.info("Bootstrapping MongoDemo application");
+		@SuppressWarnings("resource")
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(
 				"META-INF/spring/applicationContext.xml");
 		PersonRepository personRepository = context
@@ -25,8 +25,9 @@ public class MongoDBApp {
 		personRepository.dropPersonCollection(); // create person collection<br
 													// />
 		personRepository.createPersonCollection();
-		for (int i = 0; i < 20; i++) {
-			personRepository.insertPersonWithNameJohnAndRandomAge();
+	
+		for (int i = 0; i < 3; i++) {
+			personRepository.insertPerson("V"+i, 25, "I1", "P1", "Male", "Bengaluru", "4586734324", 5000.00);
 		}
 		personRepository.logAllPersons();
 		

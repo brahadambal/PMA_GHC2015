@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 /** * Repository for {@link Person}s */
-@Repository
+@Repository("personRepository")
 public class PersonRepository {
 	static final Logger logger = LoggerFactory
 			.getLogger(PersonRepository.class);
@@ -18,14 +18,12 @@ public class PersonRepository {
 
 	public void logAllPersons() {
 		List<Person> results = mongoTemplate.findAll(Person.class);
-		logger.info("Total amount of persons: {}", results.size());
+		logger.info("Total number of persons: {}", results.size());
 		logger.info("Results: {}", results);
 	}
 
-	public void insertPersonWithNameJohnAndRandomAge() { // get random age
-															// between 1 and 100
-		double age = Math.ceil(Math.random() * 100);
-		Person p = new Person("John", (int) age);
+	public void insertPerson(String name, int age, String instanceId, String projectId, String gender, String address, String mobile, double salary) {
+		Person p = new Person(name, age, instanceId, projectId, gender, address, mobile, salary);
 		mongoTemplate.insert(p);
 	}
 
