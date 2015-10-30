@@ -1,34 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag2"
+    android:scrollbars="none">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag2">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/InstanceUpdateBanner"
-        android:id="@+id/textView_InstanceUpdates"
-        android:background="#1fffff" />
+    android:layout_height="wrap_content"
+    android:background="@android:color/black">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/InstanceOverview"
+        android:id="@+id/button_OverviewInstance"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/AddNewInstance"
-        android:id="@+id/button_AddInstance"/>
+        android:id="@+id/button_AddInstance"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/UpdateInstance"
-        android:id="@+id/button_UpdateInstance" />
+        android:id="@+id/button_UpdateInstance"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/DeleteInstance"
-        android:id="@+id/button_DeleteInstance" />
+        android:id="@+id/button_DeleteInstance"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ListALLInstances"
+        android:id="@+id/button_ListALLInstances"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 </LinearLayout>
+    </ScrollView>

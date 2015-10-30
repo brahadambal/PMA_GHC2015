@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mallya.manageeasy.AddFundsActivity_4f"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:id="@+id/RelativeLayout4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/DonatedBy"
+        android:id="@+id/textView_DonatedBy"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/DonatedAmount"
+        android:id="@+id/textView_Amount"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/textView_DonatedBy"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/FundsProjectName"
+        android:id="@+id/textView_ProjectName"
+        android:layout_below="@+id/textView_Amount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/FundsLocation"
+        android:id="@+id/textView_Location"
+        android:layout_below="@+id/textView_ProjectName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/PANCardNum"
+        android:id="@+id/textView_PanCard"
+        android:layout_below="@+id/textView_Location"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_DonatedBy"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+
+        android:inputType="text"
+        android:layout_toRightOf="@+id/textView_PanCard"
+        android:layout_toEndOf="@+id/textView_PanCard" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_Amount"
+
+        android:inputType="number"
+        android:layout_alignRight="@+id/editText_DonatedBy"
+        android:layout_alignEnd="@+id/editText_DonatedBy"
+        android:layout_above="@+id/textView_ProjectName"
+        android:layout_alignLeft="@+id/editText_DonatedBy"
+        android:layout_alignStart="@+id/editText_DonatedBy" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_ProjectName"
+
+        android:inputType="text"
+        android:layout_above="@+id/textView_Location"
+        android:layout_alignRight="@+id/editText_Amount"
+        android:layout_alignEnd="@+id/editText_Amount"
+        android:layout_toEndOf="@+id/button_AddDonations" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_Location"
+
+        android:inputType="text"
+        android:layout_above="@+id/textView_PanCard"
+        android:layout_alignRight="@+id/editText_ProjectName"
+        android:layout_alignEnd="@+id/editText_ProjectName"
+        android:layout_alignLeft="@+id/editText_ProjectName"
+        android:layout_alignStart="@+id/editText_ProjectName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_PanCard"
+        android:layout_alignBottom="@+id/textView_PanCard"
+
+        android:inputType="text"
+        android:layout_alignRight="@+id/editText_Location"
+        android:layout_alignEnd="@+id/editText_Location"
+        android:layout_alignLeft="@+id/editText_Location"
+        android:layout_alignStart="@+id/editText_Location" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddDonations"
+        android:id="@+id/button_AddDonations"
+        android:layout_below="@+id/editText_PanCard"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="72dp" />
+</RelativeLayout>

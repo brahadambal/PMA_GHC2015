@@ -19,7 +19,7 @@ public class UpdateProjectActivity_Frag1  extends Fragment {
     private int page;
 
     public static Activity activity;
-    Button addProjectButton, updateProjectButton, deleteProjectButton;
+    Button addProjectButton, updateProjectButton, deleteProjectButton, overviewProjectButton, listAllProjectButton;
 
     // newInstance constructor for creating fragment with arguments
     public static UpdateProjectActivity_Frag1 newInstance(int page, String title, Activity _activity) {
@@ -46,13 +46,12 @@ public class UpdateProjectActivity_Frag1  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.upa_fragment_first, container, false);
-        //TextView tvLabel = (TextView) view.findViewById(R.id.textView1);
-        //tvLabel.setText(page + " -- " + title);
 
-        addProjectButton = (Button)view.findViewById(R.id.Button_AddProject);
+        addProjectButton = (Button)view.findViewById(R.id.button_AddProject);
         updateProjectButton = (Button)view.findViewById(R.id.button_UpdateProject);
         deleteProjectButton = (Button)view.findViewById(R.id.button_DeleteProject);
-
+        overviewProjectButton = (Button)view.findViewById(R.id.button_Overview);
+        listAllProjectButton = (Button)view.findViewById(R.id.button_ListALLprojects);
 
         // PROJECT SPECIFIC LISTENERS
         addProjectButton.setOnClickListener(
@@ -81,6 +80,26 @@ public class UpdateProjectActivity_Frag1  extends Fragment {
                     public void onClick(View v) {
                         Intent projectDeleteIntent = new Intent("com.example.mallya.manageeasy.DeleteProjectActivity_4a");
                         startActivity(projectDeleteIntent);
+                    }
+                }
+        );
+
+        overviewProjectButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent projectOverviewIntent = new Intent(UpdateProjectActivity_Frag1.this.getActivity(), OverViewProjectActivity_4a.class);
+                        startActivity(projectOverviewIntent);
+                    }
+                }
+        );
+
+        listAllProjectButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent projectListAllIntent = new Intent("com.example.mallya.manageeasy.ListAllProjectActivity_4a");
+                        startActivity(projectListAllIntent);
                     }
                 }
         );

@@ -20,7 +20,7 @@ public class UpdateProjectActivity_Frag2 extends Fragment {
     private int page;
 
     public static Activity activity;
-    Button addInstanceButton, updateInstanceButton, deleteInstanceButton;
+    Button addInstanceButton, updateInstanceButton, deleteInstanceButton, overviewInstanceButton, listAllInstanceButton;
 
     // newInstance constructor for creating fragment with arguments
     public static UpdateProjectActivity_Frag2 newInstance(int page, String title, Activity _activity) {
@@ -48,12 +48,12 @@ public class UpdateProjectActivity_Frag2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.upa_fragment_second, container, false);
-        //TextView tvLabel = (TextView) view.findViewById(R.id.textView1);
-        //tvLabel.setText(page + " -- " + title);
 
         addInstanceButton = (Button)view.findViewById(R.id.button_AddInstance);
         updateInstanceButton = (Button)view.findViewById(R.id.button_UpdateInstance);
         deleteInstanceButton = (Button)view.findViewById(R.id.button_DeleteInstance);
+        overviewInstanceButton = (Button)view.findViewById(R.id.button_OverviewInstance);
+        listAllInstanceButton = (Button)view.findViewById(R.id.button_ListALLInstances);
 
         // INSTANCE SPECIFIC LISTENERS
         addInstanceButton.setOnClickListener(
@@ -82,6 +82,26 @@ public class UpdateProjectActivity_Frag2 extends Fragment {
                     public void onClick(View v) {
                         Intent instanceDeleteIntent = new Intent("com.example.mallya.manageeasy.DeleteInstanceActivity_4b");
                         startActivity(instanceDeleteIntent);
+                    }
+                }
+        );
+
+        overviewInstanceButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent instanceOverviewIntent = new Intent("com.example.mallya.manageeasy.OverViewInstanceActivity_4b");
+                        startActivity(instanceOverviewIntent);
+                    }
+                }
+        );
+
+        listAllInstanceButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent instanceListAllIntent = new Intent("com.example.mallya.manageeasy.ListAllInstanceActivity_4b");
+                        startActivity(instanceListAllIntent);
                     }
                 }
         );

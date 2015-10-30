@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.Personnel_3"
+    android:scrollbars="none">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PERSONNEL OVERVIEW"
+        android:id="@+id/button_Overview"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/AddPersonnel"
+        android:id="@+id/button_AddPersonnel"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/UpdatePersonnel"
+        android:id="@+id/button_UpdatePersonnel"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DeletePersonnel"
+        android:id="@+id/button_DeletePersonnel"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LIST ALL PERSONNEL"
+        android:id="@+id/button_ListALLPersonnel"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+</LinearLayout>
+    </ScrollView>

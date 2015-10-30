@@ -1,13 +1,27 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.AddInstanceActivity_4b"
+    android:scrollbars="none">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="366dp" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.mallya.manageeasy.AddInstanceActivity_4b"
     android:paddingStart="@dimen/activity_horizontal_margin"
     android:paddingEnd="@dimen/activity_horizontal_margin"
-    android:id="@+id/RelativeLayout5">
+    android:id="@+id/RelativeLayout5"
+    android:layout_weight="0.90">
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,11 +38,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/InstanceProjectName"
-        android:id="@+id/textView_InstanceProjectName"
-        android:layout_below="@+id/textView_InstanceName"
+        android:id="@+id/textView_ProjectName"
+        android:layout_below="@+id/editText_InstanceName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_marginTop="42dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,10 +50,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/InstanceDescription"
         android:id="@+id/textView_InstanceDescription"
-        android:layout_below="@+id/textView_InstanceProjectName"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,10 +60,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/InstanceFunds"
         android:id="@+id/textView_InstanceFund"
-        android:layout_below="@+id/textView_InstanceDescription"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_below="@+id/editText_InstanceDescription"
+        android:layout_alignRight="@+id/textView_InstanceName"
+        android:layout_alignEnd="@+id/textView_InstanceName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,10 +72,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/InstanceLocation"
         android:id="@+id/textView_InstanceLocation"
-        android:layout_below="@+id/textView_InstanceFund"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="42dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -79,23 +92,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText_InstanceProjectName"
-        android:layout_alignTop="@+id/textView_InstanceProjectName"
-        android:layout_alignRight="@+id/editText_InstanceName"
-        android:layout_alignEnd="@+id/editText_InstanceName"
+        android:inputType="text"
         android:layout_alignLeft="@+id/editText_InstanceName"
         android:layout_alignStart="@+id/editText_InstanceName"
-        android:inputType="text" />
+        android:layout_alignRight="@+id/editText_InstanceName"
+        android:layout_alignEnd="@+id/editText_InstanceName"
+        android:layout_alignTop="@+id/textView_ProjectName" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText_InstanceDescription"
-        android:layout_alignTop="@+id/textView_InstanceDescription"
         android:layout_alignLeft="@+id/editText_InstanceProjectName"
         android:layout_alignStart="@+id/editText_InstanceProjectName"
         android:layout_alignRight="@+id/editText_InstanceProjectName"
         android:layout_alignEnd="@+id/editText_InstanceProjectName"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_alignTop="@+id/textView_InstanceDescription" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -119,14 +132,36 @@
         android:layout_alignEnd="@+id/editText_InstanceFunds"
         android:inputType="text" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/AddNewInstanceButton"
-        android:id="@+id/button_AddNewInstance"
-        android:layout_below="@+id/textView_InstanceLocation"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/DonationsBy"
+        android:id="@+id/textView_donatationsBy"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="53dp" />
+        android:layout_below="@+id/editText_InstanceFunds"
+        android:layout_alignRight="@+id/textView_ProjectName"
+        android:layout_alignEnd="@+id/textView_ProjectName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_donationsBY"
+        android:layout_alignTop="@+id/textView_donatationsBy"
+        android:layout_alignLeft="@+id/editText_InstanceLocation"
+        android:layout_alignStart="@+id/editText_InstanceLocation"
+        android:layout_alignRight="@+id/editText_InstanceLocation"
+        android:layout_alignEnd="@+id/editText_InstanceLocation"
+        android:inputType="text" />
 
 </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AddNewInstanceButton"
+            android:id="@+id/button_AddNewInstance"
+            android:layout_marginBottom="33dp" />
+    </LinearLayout>
+    </ScrollView>

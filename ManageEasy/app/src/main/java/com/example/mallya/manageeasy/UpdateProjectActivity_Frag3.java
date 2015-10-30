@@ -12,13 +12,15 @@ import android.widget.Button;
 /**
  * Created by Mallya on 10/18/2015.
  */
+
+
 public class UpdateProjectActivity_Frag3 extends Fragment {
     // Store instance variables
     private String title;
     private int page;
 
     public static Activity activity;
-    Button addInventoryButton, updateInventoryButton, deleteInventoryButton;
+    Button addSStoryButton, updateSStoryButton, deleteSStoryButton,overviewSStoryButton, listAllSStoryButton;
 
     // newInstance constructor for creating fragment with arguments
     public static UpdateProjectActivity_Frag3 newInstance(int page, String title, Activity _activity) {
@@ -37,6 +39,8 @@ public class UpdateProjectActivity_Frag3 extends Fragment {
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
         title = getArguments().getString("someTitle");
+
+
     }
 
     // Inflate the view for the fragment based on layout XML
@@ -47,41 +51,62 @@ public class UpdateProjectActivity_Frag3 extends Fragment {
         //TextView tvLabel = (TextView) view.findViewById(R.id.textView1);
         //tvLabel.setText(page + " -- " + title);
 
-        addInventoryButton = (Button) view.findViewById(R.id.button_AddInventory);
-        updateInventoryButton = (Button) view.findViewById(R.id.button_UpdateInventory);
-        deleteInventoryButton = (Button) view.findViewById(R.id.button_DeleteInventory);
+        addSStoryButton = (Button)view.findViewById(R.id.button_AddSuccessStory);
+        updateSStoryButton = (Button)view.findViewById(R.id.button_UpdateSuccessStory);
+        deleteSStoryButton = (Button)view.findViewById(R.id.button_DeleteSuccessStory);
+        overviewSStoryButton = (Button)view.findViewById(R.id.Button_Overview);
+        listAllSStoryButton = (Button)view.findViewById(R.id.Button_ListALLSuccssStory);
 
-        // INVENTORY SPECIFIC LISTENERS
-        addInventoryButton.setOnClickListener(
+        // INSTANCE SPECIFIC LISTENERS
+        addSStoryButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent inventoryAddIntent = new Intent("com.example.mallya.manageeasy.AddInventoryActivity_4d");
-                        startActivity(inventoryAddIntent);
+                        Intent successStoryAddIntent = new Intent("com.example.mallya.manageeasy.AddSuccessStoryActivity_4e");
+                        startActivity(successStoryAddIntent);
                     }
                 }
         );
 
-        updateInventoryButton.setOnClickListener(
+        updateSStoryButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent inventoryUpdateIntent = new Intent("com.example.mallya.manageeasy.UpdateInventoryActivity_4d");
-                        startActivity(inventoryUpdateIntent);
+                        Intent successStoryUpdateIntent = new Intent("com.example.mallya.manageeasy.UpdateSuccessStoryActivity_4e");
+                        startActivity(successStoryUpdateIntent);
                     }
                 }
         );
 
-        deleteInventoryButton.setOnClickListener(
+        deleteSStoryButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent inventoryDeleteIntent = new Intent("com.example.mallya.manageeasy.DeleteInvetoryActivity_4d");
-                        startActivity(inventoryDeleteIntent);
+                        Intent successStoryDeleteIntent = new Intent("com.example.mallya.manageeasy.DeleteSuccessStoryActivity_4e");
+                        startActivity(successStoryDeleteIntent);
                     }
                 }
         );
 
+        overviewSStoryButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent successStoryOverviewIntent = new Intent("com.example.mallya.manageeasy.OverViewSuccessStoryActivity_4e");
+                        startActivity(successStoryOverviewIntent);
+                    }
+                }
+        );
+
+        listAllSStoryButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent successStoryOverviewIntent = new Intent("com.example.mallya.manageeasy.ListAllSuccessStoryActivity_4e");
+                        startActivity(successStoryOverviewIntent);
+                    }
+                }
+        );
         return view;
     }
 }

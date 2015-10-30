@@ -10,7 +10,7 @@ public class UpdateProjectDetailsActivity_4a extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_4a_update_project_details);
+        setContentView(R.layout.activity_4a_update_project);
     }
 
     @Override

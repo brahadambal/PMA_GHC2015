@@ -21,6 +21,7 @@ public class AddInventoryActivity_4d extends AppCompatActivity {
         setContentView(R.layout.activity_4d_add_inventory);
 
         backEndDB                   = new DatabaseHelper (this);
+
         editInventoryName           = (EditText)findViewById(R.id.editText_InventoryName);
         editInventoryDescription    = (EditText)findViewById(R.id.editText_InventoryDescription);
         editInvetoryInstancetName   = (EditText)findViewById(R.id.editText_InventoryRelatedInstanceName);
@@ -37,13 +38,29 @@ public class AddInventoryActivity_4d extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        boolean isInserted = backEndDB.insertInventorySpecificData(editInventoryName.getText().toString(), editInventoryDescription.getText().toString(),
-                                editInvetoryInstancetName.getText().toString(), editInventoryCost.getText().toString());
+                        if(editInventoryName.getText().toString().trim().length() <= 0 || editInventoryDescription.getText().toString().trim().length() <= 0 ||
+                                editInvetoryInstancetName.getText().toString().trim().length() <= 0 || editInventoryCost.getText().toString().trim().length() <= 0)
+                        {
 
-                        if (isInserted == true)
-                            Toast.makeText(AddInventoryActivity_4d.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(AddInventoryActivity_4d.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+                            Toast.makeText(AddInventoryActivity_4d.this, "Please enter data in all fields", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            boolean isInserted = backEndDB.insertInventorySpecificData(editInventoryName.getText().toString(),
+                                    editInventoryDescription.getText().toString(), editInvetoryInstancetName.getText().toString(),
+                                    editInventoryCost.getText().toString());
+
+                            if (isInserted == true)
+                                Toast.makeText(AddInventoryActivity_4d.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                            else
+                                Toast.makeText(AddInventoryActivity_4d.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+
+                            //clearing edit-texts
+                            editInventoryName.setText("");
+                            editInventoryDescription.setText("");
+                            editInvetoryInstancetName.setText("");
+                            editInventoryCost.setText("");
+
+                        }
                     }
                 }
         );

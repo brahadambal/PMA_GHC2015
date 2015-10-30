@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ManageEasy</string>
+    <string name="app_name">EZManage</string>
     <string name="LoginPage_text">Login</string>
     <string name="password_text">Password</string>
     <string name="LoginAttempts_text">Login Attempts</string>
@@ -8,7 +8,7 @@
     <string name="Welcome_text">Welcome to EZManage</string>
     <string name="action_settings">actionSettings</string>
     <string name="hands">Hands_picture</string>
-    <string name="title_activity_user">Welcome</string>
+    <string name="title_activity_user">Welcome to EZManage</string>
     <string name="LoginPage">Login Page</string>
     <string name="Charts">Charts</string>
     <string name="Projects">Projects</string>
@@ -16,10 +16,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="AddNewProject">Add New Project</string>
-    <string name="ProjectUpdateBanner">Project Updates</string>
+    <string name="ProjectUpdateBanner">PROJECT UPDATES</string>
     <string name="UpdateProject">Update Project</string>
     <string name="DeleteProject">Delete Project</string>
-    <string name="InstanceUpdateBanner">Instance Updates</string>
+    <string name="InstanceUpdateBanner">INSTANCE UPDATES</string>
     <string name="AddNewInstance">Add New Instance</string>
     <string name="UpdateInstance">Update Instance</string>
     <string name="DeleteInstance">Delete Instance</string>
@@ -75,4 +75,57 @@
     <string name="title_activity_Update_Project_details_frag2">Instance Page</string>
     <string name="title_activity_Update_Project_details_frag3">Inventory Page</string>
     <string name="title_activity_Update_Project_details_frag4">Project Page</string>
+    <string name="Overview">Overview</string>
+    <string name="ListALLprojects">List ALL Projects</string>
+    <string name="ListALLInstances"> List ALL Instances</string>
+    <string name="AddSuccessStory">ADD NEW SUCCESS STORY</string>
+    <string name="UpdateSuccessStory">Update success story</string>
+    <string name="DeleteSuccessStory">Delete success story</string>
+    <string name="ListAllSuccessStory">List ALL SUCCESS STORY</string>
+    <string name="FundsOverview">FUNDS OVERVIEW</string>
+    <string name="AddFunds">ADD New FUND/DONATIONS</string>
+    <string name="UpdateFunds">UPDATE FUND/DONATIONS</string>
+    <string name="DeleteFunds">DELETE FUND/DONATIONS</string>
+    <string name="ListAllFunds">LIST ALL FUND/DONATIONS</string>
+    <string name="ListAllFund">LIST ALL FUND/DONTAIONS</string>
+    <string name="Comingsoon">COMING SOON</string>
+    <string name="ProjectOverview">Project Overview</string>
+    <string name="InstanceOverview">INSTANCE Overview</string>
+    <string name="SuccessStoryOverview">SUCCESS STORY Overview</string>
+    <string name="success_story_name">Success Story Name</string>
+    <string name="InstitutionName">Institution Name</string>
+    <string name="AddSuccessStoru">Add Success Story</string>
+    <string name="AddDonations">Add Donations</string>
+    <string name="Analytics">Analytics</string>
+    <string name="Funds">Funds</string>
+    <string name="Personnel">Personnel</string>
+    <string name="Inventory">Inventory</string>
+    <string name="SSPersonnelName">Personnel Name</string>
+    <string name="SSDescription">Description</string>
+    <string name="SSInstanceName">Instance Name</string>
+    <string name="SSContactNum">Contact #</string>
+    <string name="SSAddress">Address</string>
+    <string name="DonationsBy">Donations By</string>
+    <string name="FundsProjectName">ProjectName</string>
+    <string name="DonatedAmount">Amount</string>
+    <string name="DonatedBy">Donated By</string>
+    <string name="FundsLocation">Location</string>
+    <string name="PANCardNum">PAN Card #</string>
+    <string name="comingsoon">COMING SOON</string>
+    <string name="commingsoon">COMING SOON</string>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
 </resources>

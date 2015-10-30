@@ -13,7 +13,7 @@ public class AddInstanceActivity_4b extends AppCompatActivity {
 
     DatabaseHelper backEndDB;
 
-    EditText editInstanceName, editInstanceProjectName, editInstanceDescription, editInstanceFunds, editInstanceLocation;
+    EditText editInstanceName, editInstanceProjectName, editInstanceDescription, editInstanceFunds, editInstanceLocation,editDonationsBy;
     Button addNewInstanceButton;
 
     @Override
@@ -22,13 +22,16 @@ public class AddInstanceActivity_4b extends AppCompatActivity {
         setContentView(R.layout.activity_4b_add_instance);
 
         backEndDB               = new DatabaseHelper (this);
+
         editInstanceName        = (EditText)findViewById(R.id.editText_InstanceName);
         editInstanceProjectName = (EditText)findViewById(R.id.editText_InstanceProjectName);
         editInstanceDescription = (EditText)findViewById(R.id.editText_InstanceDescription);
         editInstanceFunds       = (EditText)findViewById(R.id.editText_InstanceFunds);
         editInstanceLocation    = (EditText)findViewById(R.id.editText_InstanceLocation);
+        editDonationsBy         = (EditText)findViewById(R.id.editText_DonatedBy);
 
         addNewInstanceButton    = (Button)findViewById(R.id.button_AddNewInstance);
+
         AddData();
     }
 
@@ -39,13 +42,31 @@ public class AddInstanceActivity_4b extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        boolean isInserted = backEndDB.insertInstanceSpecificData(editInstanceName.getText().toString(), editInstanceProjectName.getText().toString(),
-                                editInstanceDescription.getText().toString(), editInstanceFunds.getText().toString(), editInstanceLocation.getText().toString());
+                        if(editInstanceName.getText().toString().trim().length() <= 0 || editInstanceProjectName.getText().toString().trim().length() <= 0 ||
+                                editInstanceDescription.getText().toString().trim().length() <= 0 || editInstanceFunds.getText().toString().trim().length() <= 0 ||
+                                editInstanceLocation.getText().toString().trim().length() <= 0 || editDonationsBy.getText().toString().trim().length() <= 0 )
+                        {
+                            Toast.makeText(AddInstanceActivity_4b.this, "Please enter data in all fields", Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            boolean isInserted = backEndDB.insertInstanceSpecificData(editInstanceName.getText().toString(),
+                                    editInstanceProjectName.getText().toString(), editInstanceDescription.getText().toString(),
+                                    editInstanceFunds.getText().toString(), editInstanceLocation.getText().toString(),
+                                    editDonationsBy.getText().toString());
 
-                        if (isInserted == true)
-                            Toast.makeText(AddInstanceActivity_4b.this, "Data Inserted", Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(AddInstanceActivity_4b.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+                            if (isInserted == true)
+                                Toast.makeText(AddInstanceActivity_4b.this, "Data Inserted", Toast.LENGTH_LONG).show();
+                            else
+                                Toast.makeText(AddInstanceActivity_4b.this, "Data Not Inserted", Toast.LENGTH_LONG).show();
+
+                            //clearing edit-texts
+                            editInstanceName.setText("");
+                            editInstanceProjectName.setText("");
+                            editInstanceDescription.setText("");
+                            editInstanceFunds.setText("");
+                            editInstanceLocation.setText("");
+                            editDonationsBy.setText("");
+                        }
                     }
                 }
         );

@@ -1,41 +1,69 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.UserActivity_2"
+    android:scrollbars="none">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.mallya.manageeasy.UserActivity_2"
     android:id="@+id/RelativeLayout2"
     android:paddingStart="@dimen/activity_horizontal_margin"
-    android:paddingEnd="@dimen/activity_horizontal_margin">
-    <!--android:background="@drawable/hands"
-    android:alpha=".50" -->
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/Welcome_text"
-        android:id="@+id/textView_welcome"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:textColor="#010101"
-        android:background="#8FFF" />
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:background="@android:color/black"
+    android:layout_height="500dp">
+    <!--    android:alpha=".50" -->
 
     <ImageButton
-        android:layout_width="121dp"
-        android:layout_height="116dp"
+        android:layout_width="156dp"
+        android:layout_height="149dp"
         android:id="@+id/imageButton_Project"
-        android:src="@drawable/projmanagement"
-        android:layout_gravity="left|center_vertical"
+        android:src="@drawable/projmanagement9"
+        android:layout_gravity="left|top"
         android:contentDescription="@string/Projects" />
 
     <ImageButton
-        android:layout_width="126dp"
-        android:layout_height="105dp"
-        android:id="@+id/imageButton_chart"
-        android:src="@drawable/ic3"
+        android:layout_width="159dp"
+        android:layout_height="160dp"
+        android:id="@+id/imageButton_Analytics"
+        android:src="@drawable/ic7"
         android:layout_gravity="right|center_vertical"
-        android:contentDescription="@string/Charts" />
+        android:contentDescription="@string/Analytics"/>
 
+    <ImageButton
+        android:layout_width="162dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageButton_Funds"
+        android:src="@drawable/funds7"
+        android:layout_gravity="right|top"
+        android:contentDescription="@string/Funds" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/imageButton_Personnel"
+        android:src="@drawable/people19"
+        android:layout_gravity="left|center_vertical"
+        android:contentDescription="@string/Personnel" />
+
+
+    <ImageButton
+        android:layout_width="154dp"
+        android:layout_height="153dp"
+        android:id="@+id/imageButton_Inventory"
+        android:src="@drawable/inventory6e"
+        android:layout_gravity="left|bottom"
+        android:contentDescription="@string/Inventory" />
 </FrameLayout>
+</LinearLayout>
+    </ScrollView>

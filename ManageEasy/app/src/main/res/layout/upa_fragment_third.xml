@@ -1,34 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag3"
+    android:scrollbars="none">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag3">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/InventoryUpdatesBanner"
-        android:id="@+id/textView_InventoryUpdates"
-        android:background="#1fffff"/>
+    android:layout_height="wrap_content"
+    android:id="@+id/LayoutFrag3"
+    android:background="@android:color/black">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/AddInventory"
-        android:id="@+id/button_AddInventory"/>
+        android:text="@string/SuccessStoryOverview"
+        android:id="@+id/Button_Overview"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/UpdateInventory"
-        android:id="@+id/button_UpdateInventory"/>
+        android:text="@string/AddSuccessStory"
+        android:id="@+id/button_AddSuccessStory"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/DeleteInventory"
-        android:id="@+id/button_DeleteInventory"/>
+        android:text="@string/UpdateSuccessStory"
+        android:id="@+id/button_UpdateSuccessStory"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DeleteSuccessStory"
+        android:id="@+id/button_DeleteSuccessStory"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ListAllSuccessStory"
+        android:id="@+id/Button_ListALLSuccssStory"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
 </LinearLayout>
+    </ScrollView>

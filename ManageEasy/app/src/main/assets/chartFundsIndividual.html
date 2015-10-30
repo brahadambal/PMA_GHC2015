@@ -1,0 +1,154 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["columnchart"]});
+
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+      var numCols = Android.getTotalNumProjectDonationsByID();
+      var rows = new Array();
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'PROJECT');
+      data.addColumn('number', 'DONATIONS');
+
+
+      for (var i = 1; i <= numCols; i++) {
+            var nums = Android.getFundsFromDonationsForProject();
+            nums = JSON.parse(nums);
+            var ids = Android.getProjectIDsFromThisDonation();
+            ids = JSON.parse(ids);
+
+            if (nums[i]==0)
+                rows.push([Android.getProjectName(ids[i]),1]);
+            else
+                rows.push([Android.getProjectName(ids[i]),nums[i]]);
+      }
+
+
+      data.addRows(rows);
+
+
+    // Set chart options
+     var options = {'title':'This donation distributed per Project',
+                       is3D: true,
+                       'width':400,
+                       'height':300,
+                       hAxis: {title: 'Projects', titleTextStyle: {color: 'red'}},
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'} };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+        var toggle = 1;
+
+     function selectHandler() {
+
+        var dataInside = new google.visualization.DataTable();
+        if (toggle == 3)
+        {
+            options = {'title':'This donation distributed per Project',
+                       is3D: true,
+                       'width':400,
+                       'height':300,
+                       hAxis: {title: 'Projects', titleTextStyle: {color: 'red'}},
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'} };
+
+                var numCols = Android.getTotalNumProjectDonationsByID();
+                var rows = new Array();
+                dataInside.addColumn('string', 'PROJECT');
+                dataInside.addColumn('number', 'DONATIONS');
+
+
+            for (var i = 1; i <= numCols; i++) {
+            var nums = Android.getFundsFromDonationsForProject();
+            nums = JSON.parse(nums);
+            var ids = Android.getProjectIDsFromThisDonation();
+            ids = JSON.parse(ids);
+
+            if (nums[i]==0)
+                rows.push([Android.getProjectName(ids[i]),1]);
+            else
+                rows.push([Android.getProjectName(ids[i]),nums[i]]);
+      }
+
+            dataInside.addRows(rows);
+            toggle=1;
+
+            chart.draw(dataInside, options);
+        }
+		if (toggle == 1)
+		{
+			options = {'title':'This donation distributed per Instance',
+			            is3D: true,
+                       'width':400,
+                       'height':300,
+                       hAxis: {title: 'Instances', titleTextStyle: {color: 'red'}},
+			            pieSliceText: 'value',
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'} };
+
+			 // Create the data table.
+            var rows = new Array();
+            var numCols = Android.getTotalNumInstanceDonationsByID();
+            dataInside.addColumn('string', 'INSTANCES');
+            dataInside.addColumn('number', 'DONATIONS');
+
+            for (var i = 1; i <= numCols; i++) {
+            var nums = Android.getFundsFromDonationsForInstances();
+            nums = JSON.parse(nums);
+            var ids = Android.getInstanceIDsFromThisDonation();
+            ids = JSON.parse(ids);
+
+            if (nums[i]==0)
+                rows.push([Android.getInstanceName(ids[i]),1]);
+            else
+                rows.push([Android.getInstanceName(ids[i]),nums[i]]);
+            }
+
+            dataInside.addRows(rows);
+
+        	toggle=2;
+
+        	chart.draw(dataInside, options);
+		}
+		else if (toggle == 2)
+		{
+			options = {'title':'This donation: Utilized Vs Un-utilized portion of donation ',
+                       'width':400,
+                       'height':400,
+			            pieSliceText: 'value',
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'}};
+
+             // Create the data table.
+            var rows = new Array();
+            dataInside.addColumn('string', 'FUND TYPE');
+            dataInside.addColumn('number', 'FUNDS');
+
+            rows.push(["Free Pool", Android.getFundsInFreePool()]);
+            rows.push(["Dedicated Funds",Android.getSumDonationsForProjects()]);
+
+            dataInside.addRows(rows);
+            toggle=3;
+
+            chart.draw(dataInside, options);
+		}
+
+
+	  }
+	    google.visualization.events.addListener(chart, 'select', function () {
+		    selectHandler();
+	    });
+
+	    chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+<div id="chart_div"></div>
+
+</body>
+</html>

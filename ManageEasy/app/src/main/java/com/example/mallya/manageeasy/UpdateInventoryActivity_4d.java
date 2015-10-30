@@ -10,7 +10,7 @@ public class UpdateInventoryActivity_4d extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_4d_update_inventory_activity);
+        setContentView(R.layout.activity_4d_update_inventory);
     }
 
     @Override

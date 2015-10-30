@@ -1,34 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag1"
+    android:scrollbars="none">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mallya.manageeasy.UpdateProjectActivity_Frag1">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/ProjectUpdateBanner"
-        android:id="@+id/textView_ProjectUpdates"
-        android:background="#1fffff"/>
+    android:layout_height="wrap_content"
+    android:background="@android:color/black">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ProjectOverview"
+        android:id="@+id/button_Overview"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/AddNewProject"
-        android:id="@+id/Button_AddProject"/>
+        android:id="@+id/button_AddProject"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/UpdateProject"
-        android:id="@+id/button_UpdateProject" />
+        android:id="@+id/button_UpdateProject"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/DeleteProject"
-        android:id="@+id/button_DeleteProject" />
+        android:id="@+id/button_DeleteProject"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ListALLprojects"
+        android:id="@+id/button_ListALLprojects"
+        android:background="@drawable/gradient_blue"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        style="@style/ButtonText"/>
+
+
 </LinearLayout>
+    </ScrollView>
