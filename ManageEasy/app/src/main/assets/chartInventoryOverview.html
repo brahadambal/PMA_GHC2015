@@ -19,138 +19,102 @@
       // Create the data table.
       var rows = new Array();
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'PROJECT');
-      data.addColumn('number', 'LOCATIONS');
 
-      var numCols = 5;
-      for (var i = 1; i <= numCols; i++) {
-            rows.push([Android.getProjectName(i),Android.getProjectFunds(i)]);
+      var numCols = Android.getTotalNumOfInventoryTypes();
+      var nums = Android.getUniqueInventoryTypes();
+      nums = JSON.parse(nums);
+      data.addColumn('string','PROJECTS')
+
+      for (var k = 1 ; k <= numCols; k++)
+      {
+           data.addColumn('number', nums[k]);
       }
-      data.addRows(rows);
+
+      var totalProjs = Android.getTotalNumProjects();
+      data.addRows(totalProjs);
+
+       for (var i = 0; i < totalProjs; i++) {
+
+            data.setValue( i , 0 , Android.getProjectName(i+1));
+
+            for (var k = 1 ; k < numCols; k++) {
+                data.setValue( i,  k, Android.getInventoryCostForProject(i+1, k+1).toString());
+            }
+
+        }
 
      // Set chart options
-     var options = {'title':'Funds per Project',
-                       'width':400,
+     var options = {'title':'InventoryCost per Project',
+                       'width':1000,
                        'height':400,
 			            is3D: true,
-			            pieSliceText: 'value',
+			            isStacked: true,
 			            backgroundColor: '#E4E4E4',
                         legend: { position: 'bottom'} };
 
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 
         var toggle = 1;
 
-     function selectHandler() {
+      function selectHandler() {
 
         var dataInside = new google.visualization.DataTable();
-		if (toggle == 5)
+        dataInside.addColumn('string','PROJECTS')
+
+        for (var k = 1 ; k <= numCols; k++)
+        {
+               dataInside.addColumn('number', nums[k]);
+        }
+
+		if (toggle == 2)
 		{
-			options = {'title':'Funds per Project',
-                       'width':400,
+            var totalProjs = Android.getTotalNumProjects();
+            dataInside.addRows(totalProjs);
+
+            for (var i = 0; i < totalProjs; i++) {
+                dataInside.setValue( i , 0 , Android.getProjectName(i+1));
+
+                for (var k = 1 ; k < numCols; k++) {
+                    dataInside.setValue( i,  k, Android.getInventoryCostForProject(i+1, k+1).toString());
+                }
+            }
+
+            // Set chart options
+            var options = {'title':'InventoryCost per Project',
+                       'width':2000,
                        'height':400,
 			            is3D: true,
-			            pieSliceText: 'value',
+			            isStacked: true,
 			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-			 // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'FUNDS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getProjectFunds(i)]);
-            }
-            dataInside.addRows(rows);
+                        legend: { position: 'bottom'} };
 
         	toggle=1;
 		}
 		else if (toggle == 1)
 		{
-			options = {'title':'NO# Locations per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
+            var totalInstances = Android.getTotalNumInstances();
+            dataInside.addRows(totalInstances);
 
-             // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
+            for (var i = 0; i < totalInstances; i++) {
+                dataInside.setValue( i , 0 , Android.getInstanceName(i+1));
 
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectLocations(i)]);
+                for (var k = 1 ; k < numCols; k++) {
+                    dataInside.setValue( i,  k, Android.getInventoryCostForInstance(i+1, k+1).toString());
+                }
             }
-            dataInside.addRows(rows);
+
+            // Set chart options
+            var options = {'title':'InventoryCost per Instance',
+                       'width':3000,
+                       'height':550,
+			            is3D: true,
+			            isStacked: true,
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'} };
+
             toggle=2;
-		}
-		else if (toggle == 2)
-		{
-			options = {'title':'NO# Personnel per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-		    // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumPersonnelPerProject(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=3;
-		}
-        else if (toggle == 3)
-	    {
-			options = {'title':'NO# Instances per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-			// Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectInstances(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=4;
-		}
-		else if (toggle == 4)
-		{
-			options = {'title':'NO# Success Stories per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-		    // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectSuccessStories(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=5;
 		}
 
 	   chart.draw(dataInside, options);

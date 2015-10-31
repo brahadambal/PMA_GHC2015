@@ -84,7 +84,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        // TODO DO not create Tables if they exist already. :D
+        deleteDB(db);
+        DatabaseTestHelper dbTest = new DatabaseTestHelper();
+
+        // TODO DO not create Tables if they exist already.
 
         db.execSQL("create table  " + TABLE_1 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, ProjectName TEXT, Description TEXT, " +
                 "StartDate INTEGER, EndDate INTEGER, Funds INTEGER )");
@@ -96,13 +99,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                  "Contact TEXT, Address TEXT, Salary INTEGER, JoiningDate TEXT, ResignDate TEXT, PersonnelGender TEXT  )");
 
         db.execSQL("create table  " + TABLE_4 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, InventoryName TEXT, Description TEXT," +
-                        "InstanceName TEXT , InventoryCost INTEGER )");
+                "InstanceName TEXT , InventoryCost INTEGER )");
 
         db.execSQL("create table  " + TABLE_5 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, DonatedBy TEXT, Amount INTEGER, ProjectName TEXT," +
                 "Location TEXT, PanCardNum TEXT )");
 
         db.execSQL("create table  " + TABLE_6 + "( ID INTEGER PRIMARY KEY AUTOINCREMENT, SStoryName TEXT, SStoryInstanceName, SStoryDescription TEXT," +
                 "SStoryInstitution TEXT, Personnel TEXT, SStoryContact INTEGER, SStoryAddress TEXT )");
+
+        dbTest.insertTestdata();
     }
 
 
@@ -118,6 +123,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
+    public void deleteDB (SQLiteDatabase db) {
+        // Delete the drops when this will go into production
+        db.execSQL("drop table if exists"+ TABLE_1);
+        db.execSQL("drop table if exists" + TABLE_2);
+        db.execSQL("drop table if exists" + TABLE_3);
+        db.execSQL("drop table if exists" + TABLE_4);
+        db.execSQL("drop table if exists" + TABLE_5);
+        db.execSQL("drop table if exists" + TABLE_6);
+    }
+
 
     // PROJECT SPECIFIC TABLE OPERATIONS
     public boolean insertProjectSpecificData(String projectName, String description, String  StartDate, String EndDate, String Funds) {
@@ -223,6 +239,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public int getNumProjectsForLocation(String location) {
+
+        // Project Locations needs to be less than or equal to number of instances.
+        return 10;
+
+    }
 
     public int getProjectFunds(int projectID) {
 
@@ -350,7 +372,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return ("Project" + instanceID);
     }
 
+    public int getNumInstancesPerLocation(int projectID, String location) {
+        return (10);
+    }
 
+
+    public Cursor getIndividualInstanceData(int id){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE_2 + " where ID=" +id ,null );
+        return result;
+    }
 
     // PERSONNEL SPECIFIC TABLE OPERATIONS
 
@@ -419,6 +451,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("select * from " + TABLE_4 + " where ID=" +id ,null );
         return result;
+    }
+
+    // Given a project ID and inventory name, get the inventory cost of it.
+    public int getInventoryCostForProject(int projectID, String invetoryName) {
+        return (1000);
+    }
+
+    //Given an Instance ID and inventory name, get the inventory cost of it.
+    public int getInventoryCostForInstance(int instanceID, String inventoryName) {
+        return (500);
     }
 
 

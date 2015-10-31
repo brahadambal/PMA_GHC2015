@@ -5,7 +5,7 @@
     <script type="text/javascript">
     
       // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
+      google.load('visualization', '1.0', {'packages':['columnchart']});
       
       // Set a callback to run when the Google Visualization API is loaded.
       google.setOnLoadCallback(drawChart);
@@ -20,17 +20,18 @@
       var rows = new Array();
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'PROJECT');
-      data.addColumn('number', 'LOCATIONS');
+      data.addColumn('number', 'PERSONNEL');
 
-      var numCols = 5;
+      var numCols = Android.getTotalNumProjects();
+
       for (var i = 1; i <= numCols; i++) {
-            rows.push([Android.getProjectName(i),Android.getProjectFunds(i)]);
+            rows.push([Android.getProjectName(i),Android.getNumPersonnelPerProject(i)]);
       }
       data.addRows(rows);
 
      // Set chart options
-     var options = {'title':'Funds per Project',
-                       'width':400,
+     var options = {'title':'Personnel per Project',
+                       'width':1000,
                        'height':400,
 			            is3D: true,
 			            pieSliceText: 'value',
@@ -39,17 +40,17 @@
 
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 
         var toggle = 1;
 
      function selectHandler() {
 
         var dataInside = new google.visualization.DataTable();
-		if (toggle == 5)
+		if (toggle == 2)
 		{
-			options = {'title':'Funds per Project',
-                       'width':400,
+			options = {'title':'Personnel per Project',
+                       'width':1000,
                        'height':400,
 			            is3D: true,
 			            pieSliceText: 'value',
@@ -58,11 +59,13 @@
 
 			 // Create the data table.
             var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'FUNDS');
+            dataInside.addColumn('string', 'PROJECT');
+            dataInside.addColumn('number', 'PERSONNEL');
+
+            var numCols = Android.getTotalNumProjects();
 
             for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getProjectFunds(i)]);
+                    rows.push([Android.getProjectName(i),Android.getNumPersonnelPerProject(i)]);
             }
             dataInside.addRows(rows);
 
@@ -70,8 +73,8 @@
 		}
 		else if (toggle == 1)
 		{
-			options = {'title':'NO# Locations per Project',
-                       'width':400,
+			options = {'title':'NO# Personnel per Instance',
+                       'width':2000,
                        'height':400,
 			            is3D: true,
 			            pieSliceText: 'value',
@@ -80,77 +83,16 @@
 
              // Create the data table.
             var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
+            dataInside.addColumn('string', 'INSTANCES');
+            dataInside.addColumn('number', 'PERSONNEL');
+
+            var numCols = Android.getTotalNumInstances();
 
             for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectLocations(i)]);
+                rows.push([Android.getInstanceName(i),Android.getNumPersonnelPerInstance(i)]);
             }
             dataInside.addRows(rows);
             toggle=2;
-		}
-		else if (toggle == 2)
-		{
-			options = {'title':'NO# Personnel per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-		    // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumPersonnelPerProject(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=3;
-		}
-        else if (toggle == 3)
-	    {
-			options = {'title':'NO# Instances per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-			// Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectInstances(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=4;
-		}
-		else if (toggle == 4)
-		{
-			options = {'title':'NO# Success Stories per Project',
-                       'width':400,
-                       'height':400,
-			            is3D: true,
-			            pieSliceText: 'value',
-			            backgroundColor: '#E4E4E4',
-                        legend: { position: 'bottom'}};
-
-		    // Create the data table.
-            var rows = new Array();
-            dataInside.addColumn('string', 'PROJECTS');
-            dataInside.addColumn('number', 'LOCATIONS');
-
-            for (var i = 1; i <= numCols; i++) {
-                rows.push([Android.getProjectName(i),Android.getNumProjectSuccessStories(i)]);
-            }
-            dataInside.addRows(rows);
-			toggle=5;
 		}
 
 	   chart.draw(dataInside, options);

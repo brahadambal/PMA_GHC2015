@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class UpdateFundsActivity_4f extends Activity {
+public class UpdateFundsActivity_4f extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class UpdateFundsActivity_4f extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_inventory_specific, menu);
+        getMenuInflater().inflate(R.menu.menu_update_funds, menu);
         return true;
     }
 

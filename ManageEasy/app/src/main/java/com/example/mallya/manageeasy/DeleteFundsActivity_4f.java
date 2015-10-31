@@ -2,13 +2,14 @@ package com.example.mallya.manageeasy;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 /**
  * Created by Mallya on 10/25/2015.
  */
-public class DeleteFundsActivity_4f extends Activity {
+public class DeleteFundsActivity_4f extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class DeleteFundsActivity_4f extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_inventory_specific, menu);
+        getMenuInflater().inflate(R.menu.menu_delete_funds, menu);
         return true;
     }
 

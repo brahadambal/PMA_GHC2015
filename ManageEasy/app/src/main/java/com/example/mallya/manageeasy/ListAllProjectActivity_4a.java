@@ -52,6 +52,7 @@ public class ListAllProjectActivity_4a extends Activity {
                 public void onClick(View view) {
 
                     Intent projectListIntent = new Intent(ListAllProjectActivity_4a.this, ListIndividualProjectActivity_4aa.class);
+                    projectListIntent.putExtra("projectID", id_);
                     startActivity(projectListIntent);
                 }});
         }

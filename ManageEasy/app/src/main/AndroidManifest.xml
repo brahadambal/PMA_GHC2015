@@ -203,15 +203,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ListIndividualInstanceActivity_4bb"
-            android:label="Instance" >
-            <intent-filter>
-                <action android:name="com.example.mallya.manageeasy.ListIndividualInstanceActivity_4bb" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <!-- END OF INSTANCE SUB ACTIVITIES -->
 
         <!-- START OF PERSONNEL SUB ACTIVITIES -->
@@ -429,16 +420,6 @@
             android:label="List Success Stories" >
             <intent-filter>
                 <action android:name="com.example.mallya.manageeasy.ListAllSuccessStoryActivity_4e" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".ListIndividualSuccessStoryActivity_4ee"
-            android:label="Success Story" >
-            <intent-filter>
-                <action android:name="com.example.mallya.manageeasy.ListIndividualSuccessStoryActivity_4ee" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

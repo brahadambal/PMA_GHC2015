@@ -2,13 +2,14 @@ package com.example.mallya.manageeasy;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 /**
  * Created by Mallya on 10/23/2015.
  */
-public class DeleteSuccessStoryActivity_4e extends Activity {
+public class DeleteSuccessStoryActivity_4e extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class DeleteSuccessStoryActivity_4e extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_update_project_details, menu);
+        getMenuInflater().inflate(R.menu.menu_delete_success_story, menu);
         return true;
     }
 

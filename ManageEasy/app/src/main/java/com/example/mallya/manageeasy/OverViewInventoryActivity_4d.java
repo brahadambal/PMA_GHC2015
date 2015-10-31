@@ -9,6 +9,8 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 /**
  * Created by Mallya on 10/25/2015.
  */
@@ -16,6 +18,7 @@ import android.widget.Toast;
 public class OverViewInventoryActivity_4d extends ActionBarActivity {
 
     WebView webView;
+    DatabaseHelper backEndDB = new DatabaseHelper (this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,6 @@ public class OverViewInventoryActivity_4d extends ActionBarActivity {
 
         new CountDownTimer(9000, 1000)
         {
-
             public void onTick(long millisUntilFinished) {box.show();}
             public void onFinish() {box.show();}
 
@@ -45,10 +47,55 @@ public class OverViewInventoryActivity_4d extends ActionBarActivity {
     public class WebAppInterface {
 
         @JavascriptInterface
-        public int getNumPersonnelPerProject(int num) {
-
-            return 10;
+        public int getTotalNumOfInventoryTypes() {
+            return 7;
         }
+
+        @JavascriptInterface
+        public String getUniqueInventoryTypes() {
+            //backEndDB.getFundsFromDonationsForProject(donateID);
+            String[] data = new String[] {"books", "uniforms", "food", "medicines", "clothes", "abc", "xyz" };
+            Gson gson = new Gson();
+            String inventory = gson.toJson(data);
+            return inventory;
+        }
+
+
+        @JavascriptInterface
+        public int getTotalNumProjects() {
+            return (backEndDB.getTotalNumProjects());
+        }
+
+        //Given a project ID and inventory name, get the inventory cost of it.
+        @JavascriptInterface
+        public int getInventoryCostForProject(int projectID, String invetoryName) {
+            return (backEndDB.getInventoryCostForProject(projectID, invetoryName));
+        }
+
+        @JavascriptInterface
+        public String getProjectName(int projectID) {
+            return (backEndDB.getProjectName(projectID));
+        }
+
+        @JavascriptInterface
+        public int getTotalNumInstances(){
+            return (backEndDB.getTotalNumInstances());
+        }
+
+        //Given an Instance ID and inventory name, get the inventory cost of it.
+        @JavascriptInterface
+        public int getInventoryCostForInstance(int instanceID, String inventoryName) {
+            return (backEndDB.getInventoryCostForInstance(instanceID, inventoryName));
+        }
+
+        @JavascriptInterface
+        public String getInstanceName(int instanceID) {
+            return (backEndDB.getInstanceName(instanceID));
+        }
+
+
+
+
 
 
 

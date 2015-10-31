@@ -17,6 +17,7 @@ import android.widget.Toast;
 public class OverViewPersonnelActivity_4c extends ActionBarActivity {
 
     WebView webView;
+    DatabaseHelper backEndDB = new DatabaseHelper (this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +47,38 @@ public class OverViewPersonnelActivity_4c extends ActionBarActivity {
     public class WebAppInterface {
 
         @JavascriptInterface
-        public int getNumPersonnelPerProject(int num) {
+        public int getNumPersonnelPerProject(int projectID) {
 
-            return 10;
+            return (backEndDB.getNumPersonnelPerProject(projectID));
         }
 
+        @JavascriptInterface
+        public String getProjectName(int projectID) {
 
+            return (backEndDB.getProjectName(projectID));
+        }
+
+        @JavascriptInterface
+        public int getTotalNumProjects() {
+            return (backEndDB.getTotalNumProjects());
+        }
+
+        @JavascriptInterface
+        public int getNumPersonnelPerInstance(int instanceID) {
+
+            return (backEndDB.getNumPersonnelPerInstance(instanceID));
+        }
+
+        @JavascriptInterface
+        public String getInstanceName(int instanceID) {
+
+            return (backEndDB.getInstanceName(instanceID));
+        }
+
+        @JavascriptInterface
+        public int getTotalNumInstances() {
+            return (backEndDB.getTotalNumInstances());
+        }
 
     }
 

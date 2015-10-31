@@ -1,7 +1,9 @@
 package com.example.mallya.manageeasy;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -50,10 +52,36 @@ public class ListAllInstanceActivity_4b extends Activity {
             btn.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
 
-                    Intent instanceListIntent = new Intent(ListAllInstanceActivity_4b.this, ListIndividualInstanceActivity_4bb.class);
-                    startActivity(instanceListIntent);
+                    Cursor result = backEndDB.getIndividualInstanceData(id_);
+                    if (result.getCount() == 0){
+                        //Toast.makeText(ListAllFundsActivity_4f.this, "No data available", Toast.LENGTH_LONG).show();
+                        showAllInstanceData("Error", "No Data found");
+                        return;
+                    }
+
+                    StringBuffer buffer = new StringBuffer();
+                    while (result.moveToNext()) {
+                        buffer.append("ID: "+ result.getString(0)+ "\n");
+                        buffer.append("Instance Name: "+ result.getString(1)+ "\n");
+                        buffer.append("Project Name: "+ result.getString(2)+ "\n");
+                        buffer.append("Description: "+ result.getString(3)+ "\n");
+                        buffer.append("Funds: "+ result.getString(4)+ "\n");
+                        buffer.append("Location: "+ result.getString(5)+ "\n");
+                        buffer.append("DonatedBY: "+ result.getString(6)+ "\n");
+                    }
+                    //Show all data
+                    showAllInstanceData("Personnel Data", buffer.toString());
                 }});
         }
     }
 
+    public void showAllInstanceData(String title, String message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+
+    }
 }
