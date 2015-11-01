@@ -47,7 +47,7 @@
      function selectHandler() {
 
         var dataInside = new google.visualization.DataTable();
-		if (toggle == 3)
+		if (toggle == 4)
 		{
 			options = {'title':'Funds per Instance',
                        'width':400,
@@ -114,6 +114,31 @@
 			toggle=3;
 
 		}
+		else if (toggle == 3)
+		{
+		    options = {'title':'Funds per Instance',
+                       'width':400,
+                       'height':400,
+			            is3D: true,
+			            pieSliceText: 'percentage',
+			            backgroundColor: '#E4E4E4',
+                        legend: { position: 'bottom'}};
+
+			 // Create the data table.
+            var rows = new Array();
+            dataInside.addColumn('string', 'INSTANCES');
+            dataInside.addColumn('number', 'FUNDS');
+
+            for (var i = 1; i <= numCols; i++) {
+                rows.push([Android.getInstanceName(i),Android.getInstanceFunds(i)]);
+            }
+
+            dataInside.addRows(rows);
+
+        	toggle=4;
+        }
+
+
 
 	   chart.draw(dataInside, options);
 

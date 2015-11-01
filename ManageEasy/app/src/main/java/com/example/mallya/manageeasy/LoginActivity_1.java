@@ -46,6 +46,10 @@ public class LoginActivity_1 extends Activity {
                             Toast.makeText(LoginActivity_1.this, "User and password is correct",
                                     Toast.LENGTH_SHORT).show();
 
+                            //Test elements into the db
+                            DatabaseHelper backEndDb = new DatabaseHelper(LoginActivity_1.this);
+                            backEndDb.insertTestdata();
+
                             Intent intent = new Intent("com.example.mallya.manageeasy.UserActivity_2");
                             startActivity(intent);
                         } else {

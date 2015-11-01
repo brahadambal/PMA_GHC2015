@@ -38,14 +38,14 @@
             data.setValue( i , 0 , Android.getProjectName(i+1));
 
             for (var k = 1 ; k < numCols; k++) {
-                data.setValue( i,  k, Android.getInventoryCostForProject(i+1, k+1).toString());
+                data.setValue( i,  k, Android.getInventoryCostForProject(i+1, nums[k+1]).toString());
             }
 
         }
 
      // Set chart options
      var options = {'title':'InventoryCost per Project',
-                       'width':1000,
+                       'width':1500,
                        'height':400,
 			            is3D: true,
 			            isStacked: true,
@@ -77,13 +77,13 @@
                 dataInside.setValue( i , 0 , Android.getProjectName(i+1));
 
                 for (var k = 1 ; k < numCols; k++) {
-                    dataInside.setValue( i,  k, Android.getInventoryCostForProject(i+1, k+1).toString());
+                    dataInside.setValue( i,  k, Android.getInventoryCostForProject(i+1, nums[k+1]).toString());
                 }
             }
 
             // Set chart options
             var options = {'title':'InventoryCost per Project',
-                       'width':2000,
+                       'width':1500,
                        'height':400,
 			            is3D: true,
 			            isStacked: true,
@@ -101,13 +101,13 @@
                 dataInside.setValue( i , 0 , Android.getInstanceName(i+1));
 
                 for (var k = 1 ; k < numCols; k++) {
-                    dataInside.setValue( i,  k, Android.getInventoryCostForInstance(i+1, k+1).toString());
+                    dataInside.setValue( i,  k, Android.getInventoryCostForInstance(i+1, nums[k+1]).toString());
                 }
             }
 
             // Set chart options
             var options = {'title':'InventoryCost per Instance',
-                       'width':3000,
+                       'width':1500,
                        'height':550,
 			            is3D: true,
 			            isStacked: true,

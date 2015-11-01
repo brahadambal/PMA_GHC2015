@@ -31,7 +31,10 @@
         android:id="@+id/textView_InstanceName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView_InstanceDescription"
+        android:layout_alignEnd="@+id/textView_InstanceDescription"
+        android:layout_above="@+id/editText_InstanceProjectName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +45,9 @@
         android:layout_below="@+id/editText_InstanceName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="42dp" />
+        android:layout_marginTop="42dp"
+        android:layout_alignRight="@+id/textView_InstanceName"
+        android:layout_alignEnd="@+id/textView_InstanceName" />
 
     <TextView
         android:layout_width="wrap_content"

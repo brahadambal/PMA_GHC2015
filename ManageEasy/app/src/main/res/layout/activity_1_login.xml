@@ -19,73 +19,76 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button"
+        android:id="@+id/button_LOGIN"
+        android:layout_below="@+id/TextView_numberOfAttempts"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="84dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/userName_text"
+        android:text="@string/UserName"
         android:id="@+id/textView_UserName"
         android:layout_below="@+id/LoginBannerText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="46dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_UserName"
+        android:layout_below="@+id/textView_UserName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/LoginBannerText"
+        android:layout_toEndOf="@+id/LoginBannerText"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/password_text"
+        android:text="@string/PassWord"
         android:id="@+id/textView_Password"
-        android:layout_below="@+id/textView_UserName"
+        android:layout_below="@+id/editText_UserName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="49dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText_UserName"
-        android:layout_alignTop="@+id/textView_UserName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
         android:id="@+id/editText_Password"
-        android:layout_alignBottom="@+id/textView_Password"
+        android:layout_below="@+id/textView_Password"
         android:layout_alignLeft="@+id/editText_UserName"
-        android:layout_alignStart="@+id/editText_UserName" />
+        android:layout_alignStart="@+id/editText_UserName"
+        android:layout_alignRight="@+id/editText_UserName"
+        android:layout_alignEnd="@+id/editText_UserName"
+        android:inputType="textPassword" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/LoginAttempts_text"
+        android:text="@string/LoginAttempts"
         android:id="@+id/textView_LoginAttempts"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/TextView_numberOfAttempts"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editText_Password"
-        android:layout_alignStart="@+id/editText_Password" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_button"
-        android:id="@+id/button_LOGIN"
+        android:id="@+id/TextView_numberOfAttempts"
         android:layout_below="@+id/textView_LoginAttempts"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp" />
+        android:layout_alignRight="@+id/editText_Password"
+        android:layout_alignEnd="@+id/editText_Password" />
 
 </RelativeLayout>

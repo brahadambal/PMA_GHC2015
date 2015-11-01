@@ -113,6 +113,9 @@
     <string name="PANCardNum">PAN Card #</string>
     <string name="comingsoon">COMING SOON</string>
     <string name="commingsoon">COMING SOON</string>
+    <string name="UserName">User Name</string>
+    <string name="PassWord">PassWord</string>
+    <string name="LoginAttempts">Login Attempts</string>
 
     <style name="ButtonText">
         <item name="android:layout_width">fill_parent</item>
